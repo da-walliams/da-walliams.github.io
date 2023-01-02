@@ -1,0 +1,126 @@
+\documentclass[oneside,dvipdfmx,tikz]{jsarticle}
+
+\usepackage{pxrubrica,enumerate,color,xcolor,fancyhdr,tcolorbox}
+\usepackage{etoolbox,hanging,qtree,gb4e}
+\usepackage{ebgaramond,newtxmath,ebgaramond-maths}
+
+\tolerance=1
+\interfootnotelinepenalty=10000
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\usepackage[morisawa]{pxchfon}
+\setminchofont{A-OTF-RYUMINPRO-LIGHT.otf}
+\setgothicfont{A-OTF-FutoGoB101Pro-Bold.otf}
+
+\begin{document}
+
+\begin{tcolorbox}
+以下の文が描出する事象において，拳銃を持っていたのは誰か。
+\begin{exe}
+	\ex John shot a guy with a gun.
+\end{exe}
+\end{tcolorbox}
+
+\enlargethispage{1\baselineskip}
+\noindent
+発話者により (1) のように描出された事象を E とする。また，(1) において John, guy, gun の指示する対象を，\mbox{それ}ぞれ \textsc{john}, \textsc{guy}, \textsc{gun} とおく。加えて，発話者が (1) で shot と描出した，事象 E における \textsc{john} の行為を \textsc{shoot} とおく。さらに，事象 E の生じた世界一般において名詞 gun により指示されうる対象全体からなる\mbox{集合}を \textsc{[gun]} とし，命題函数 \(\mathrm{P}\colon\{\text{\sc john}, \text{\sc guy}\}\to\{1,0\}\) を「事象 E において人物 \(i\) により所持されるような\(\text{\sc [gun]}\)の元が存在する」とき\(\mathrm{P}(i)=1\)，そうでなければ\(\mathrm{P}(i)=0\)となるよう定める。以下，「拳銃を持っていたのは誰か」を「事象 E において銃器 \textsc{gun} を持っていた参与者は誰か」ではなく，「集合 \(\{ i \mid \mathrm{P}(i)=1\}\) を外延的に\mbox{表示}せよ」と解して分析を与える。
+
+\subsection*{\rm\bf 構造的多義性について}
+
+(1) には構造的多義性がある。すなわち，(1) に対して付与可能な（すなわち文法に適った）相異なる構成素構造が少なくとも2つ存在する。具体的には，動詞句 shot a guy with a gun が多義的である。実際，構成素構造 (2a) および (2b) はともに (1) を帰結する。以下，(1) がもちうる構成素構造は (2) に挙げた2通りに限るものとして分析する。
+
+\begin{exe}
+	\ex 
+	\begin{xlist}
+	\ex John \lb{VP}shot \lb{NP} a guy \lb{PP} with a gun.]]]
+	
+	{\small
+	\Tree [.S [.NP [.N John ] ] [.VP [.V shot ] [.NP [.D a ] [.N guy ] [.PP [.P with ] [.NP [.D a ] [.N gun ] ] ] ] ] ]
+	}
+	\ex John \lb{VP}shot \lb{NP} a guy] \lb{PP} with a gun.]]
+	
+	{\small
+	\Tree [.S [.NP [.N John ] ] [.VP [.V shot ] [.NP [.D a ] [.N guy ] ] [.PP [.P with ] [.NP [.D a ] [.N gun ] ] ] ] ]
+	}
+	\end{xlist}
+\end{exe}
+
+\subsection*{\rm\bf 前置詞句 with a gun のはたらきについて}
+
+\(\mathrm{P}(\text{\sc guy})=1\) は，(2a) では保証されるが (2b) では保証されない。実際，(2a) における前置詞句 with a gun は，人物 \textsc{guy} に対して銃器 \textsc{gun} の所持を指定する。一方，(2b) における前置詞句 with a gun は，傷害行為 \textsc{shoot} に対して銃器 \textsc{gun} の使用を指定するものの，人物 \textsc{guy} に対しては何ら銃器の所持を指定しない。すなわち，(2b) における前置詞句 with a gun は，単に傷害行為の用具を指定するだけで，\(\mathrm{P}(\text{\sc guy})=1\) までは保証しない。
+
+ここで，(2b) における前置詞句 with a gun は「完全には冗長 (redundant) でない」と信じることとしたい。\mbox{行為} \textsc{shoot} を「\textsc{[gun]}の適当な元を用いた傷害行為」と仮定すると，(2b) における前置詞句 with a gun の\mbox{効果}が\mbox{著しく}損なわれてしまう。したがって，ここでは\textsc{[gun]}を銃火器類(firearms)の下位範疇と位置づけ，\textsc{shoot} を「適当な銃火器を用いた傷害行為」と解することとする。動詞 shoot の意味をより広いものと仮定し，(2b) における前置詞句 with a gun が付加詞として一定程度の意義を持つようにするためである。
+
+\subsection*{\rm\bf 文法関係と意味役割について}
+
+(2) の各解釈において，(1) の各部分はそれぞれ (3) に示す文法関係を持つ。
+
+\begin{exe}
+	\ex 
+	\begin{xlist}
+	\ex \lb{主部} John] \lb{述部} \lb{主要部} shot] \lb{目的部} a guy with a gun.]]
+	\begin{quote}
+	\small
+	\Tree [.文 \qroof{John}.主部 [.述部 \qroof{shot}.主要部 \qroof{a guy with a gun}.目的部 ] ]
+	\end{quote}
+	\ex \lb{主部} John] \lb{述部} \lb{主要部} shot] \lb{目的部} a guy] \lb{付加部} with a gun.]]
+	\begin{quote}
+	\small
+	\Tree [.文 \qroof{John}.主部 [.述部 \qroof{shot}.主要部 \qroof{a guy}.目的部 \qroof{with a gun}.付加部 ] ]
+	\end{quote}
+	\end{xlist}
+\end{exe}
+
+(2a, 3a) および (2b, 3b) のいずれの解釈においても，動詞 shoot は2価(divalent)の（いわゆる）完全他動詞で，述部目的部には人物をとっている。よって，(1) における動詞 shoot は，解釈によらず，(4) に示す項構造をもつ。すなわち，述部主要部をなす動詞 shoot は，主部および述部目的部に対してそれぞれ Agent と Patient の\mbox{意味}役割を指定する。
+
+\begin{exe}
+	\ex shoot: (Agent, Patient)
+\end{exe}
+
+\clearpage
+
+したがって，動詞 shoot の過去形 shot が述部主要部をなす (1) において，主部の指示する人物 \textsc{john} は傷害\mbox{行為} \textsc{shoot} の動作主である。よって，動詞 shoot の意味選択により，動作主 \textsc{john} による銃火器類の使用は確定する。しかしながら，John が（数ある銃火器類のうち）範疇 \textsc{[gun]} に区分されるような用具をとったかは必ずしも確定的ではない。もちろん，(2b) では，動作主 \textsc{john} による銃器 \textsc{gun} の使用が確定し，よって \(\mathrm{P}(\text{\sc john})=1\) となる。しかし，(2a) では，傷害行為は何ら用具指定を受けておらず，\(\mathrm{P}(\text{\sc john})=1\) かは定かでない。
+
+\subsection*{\rm\bf 結論}
+
+以上の分析により，以下が結論される。
+\begin{itemize}
+\item (2a) の解釈において断定できるのは \(\text{\sc guy}\in\{ i \mid \mathrm{P}(i)=1\}\)のみである。動詞 shot が動作主 \textsc{john} に指定するのは，あくまで銃火器類であって，その下位範疇 \textsc{[gun]} とは限らないからである。
+\item (2b) の解釈において断定できるのは \(\text{\sc john}\in\{ i \mid \mathrm{P}(i)=1\}\)のみである。人物 \textsc{guy} が所持品の指定を受けていないからである。
+\end{itemize}
+
+このように，発話者に追加で真意を問わなければ銃器 \textsc{gun} の所持者すらわからないし，また統辞論的分析\mbox{だけで}\(\{ i \mid \mathrm{P}(i)=1\}\)の外延表示を決定できる保証もない。たしかに，発話者が念頭に置いていた構成素構造が明らかになれば，動作主 \textsc{john} もしくは人物 \textsc{guy} のどちらか一方に対しては銃器 \textsc{gun} の使用ないし所持が確定する。しかし，構成素構造が(2a)だと判明したのちに (5a) に対して (5b) のような回答が得られたりしない限り，(6a)や(6b)といった質問なしに\(\{ i \mid \mathrm{P}(i)=1\}\) の元をもれなく特定することは困難である。
+
+\begin{exe}
+	\ex 
+	\begin{xlist}
+	\ex With what did John shoot the guy?
+	\ex With a gun.
+	\end{xlist}
+	\ex 
+	\begin{xlist}
+	\ex Did John do so with a gun?
+	\ex Did the guy whom John shot have a gun?
+	\end{xlist}
+\end{exe}
+
+とはいえ，先に指摘したように，統辞論的分析だけでも構造的多義性なら解消 (disambiguate) できる。たとえば，発話者に (7) と問えばよい。(7) に対して (8a) との回答が得られたならば，発話者が (2a) の構成素構造を念頭に置いていたこととなり，人物 \textsc{guy} による銃器 \textsc{gun} の所持が確定する。また，(7) に対して (8b) との回答が得られたならば，発話者が (2b) の構成素構造を念頭に置いていたこととなり，動作主 \textsc{john} による銃器 \textsc{gun} の使用が確定する。
+
+\begin{exe}
+	\ex Whom did John shoot?
+	\ex 
+	\begin{xlist}
+	\ex The guy with a gun.
+	\ex The guy.
+	\end{xlist}
+\end{exe}
+
+以上のように，(1)だけから範疇 \textsc{[gun]} に区分されるような銃器の所持者を全員特定することは困難である。所持者をもれなく決定するには (5)--(8) に示したような追加のテストが必要である。
+
+\begin{flushright}
+---\!--- \textit{Wally the Boogie.}
+\end{flushright}
+
+\end{document}

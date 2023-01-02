@@ -1,0 +1,7 @@
+@import url("simple.css");
+ 
+textarea,
+select,
+input {
+    border: 1px solid black;
+}
